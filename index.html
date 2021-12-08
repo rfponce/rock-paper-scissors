@@ -34,6 +34,29 @@
             break;
         }
       }
+
+      function playerSelection()
+      {
+        let selection = null;
+
+        selection = prompt("Write 1 for rock, 2 for paper or 3 for scissors):");
+        switch (selection)
+        {
+          case "1":
+            selection = "rock";
+            break;
+          case "2":
+            selection = "paper";
+            break;
+          case "3":
+            selection = "scissors";
+            break;
+          default:
+            alert("Invalid option. Canceling...");
+            selection = "cancel";
+        }
+        return selection;
+      }
       
       roundNumber++;
       if (roundNumber == 5)
