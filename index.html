@@ -143,9 +143,13 @@
       {
         return "The player points was " + playerPoints + " and the computer points was " + computerPoints + ". The player is the winner";
       }
-      else
+      else if (playerPoints < computerPoints)
       {
         return "The player points was " + playerPoints + " and the computer points was " + computerPoints + ". The computer is the winner";
+      }
+      else
+      {
+        return "The player points was " + playerPoints + " and the computer points was " + computerPoints + ". It's a draw!";
       }
     }
   </script>
