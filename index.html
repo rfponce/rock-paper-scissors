@@ -1,0 +1,18 @@
+<html>
+  <script>
+    let gameOver = false;
+    let roundNumber = 1;
+    
+    do
+    {
+      console.log("Round: " + roundNumber);
+      roundNumber++;
+      if (roundNumber == 5)
+      {
+        gameOver = true;
+        console.log("Game Over");
+      }
+    }
+    while (gameOver == false);
+  </script>
+</html>
