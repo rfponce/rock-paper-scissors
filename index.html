@@ -1,11 +1,11 @@
 <html>
   <script>
     let gameOver = false;
-    let roundNumber = 1;
+    let round = 1;
     
     do
     {
-      console.log("Round: " + roundNumber);
+      console.log("Round: " + round);
       
       function randomIntFromInterval(min, max)
       { // min and max included 
@@ -58,8 +58,8 @@
         return selection;
       }
       
-      roundNumber++;
-      if (roundNumber == 5)
+      round++;
+      if (round == 5)
       {
         gameOver = true;
         console.log("Game Over");
