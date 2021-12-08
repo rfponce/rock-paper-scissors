@@ -1,11 +1,7 @@
 <html>
   <script>
-    let gameOver = false;
-    let round = 1;
     let playerPoints = 0;
     let computerPoints = 0;
-    
-    console.log("Round: " + round);
       
     function randomIntFromInterval(min, max)
     { // min and max included 
@@ -95,13 +91,24 @@
         playerPoints++;
         return "You win, scissors beats paper."
       }
-      round++;
+      else
+      {
+        return "Both choose the same, it's a draw!"
+      }
     }
       
-    if (round == 5)
-    {
-      gameOver = true;
-      console.log("Game Over");
-    }
+    // if (round == 5)
+    // {
+    //   gameOver = true;
+    //   console.log("Game Over");
+    // }
+
+    // function game()
+    // {
+    //   let gameOver = false;
+    //   let round = 1;
+
+
+    // }
   </script>
 </html>
