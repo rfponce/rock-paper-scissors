@@ -70,26 +70,32 @@
         if (playerSelection === "rock" && computerSelection === "paper")
         {
           computerPoints++;
+          return "Computer wins, paper beats rock."
         }// 2.1.3 If player selection is rock and CPU selection is scissors, sum a point to player.
         else if (playerSelection === "rock" && computerSelection === "scissors")
         {
           playerPoints++;
+          return "You win, rock beats scissors."
         }// 2.1.4 If player selection is paper and CPU selection is scissors, sum a point to CPU.
         else if (playerSelection === "paper" && computerSelection === "scissors")
         {
           computerPoints++;
+          return "Computer wins, scissors beats paper."
         }// 2.1.5 If CPU selection is rock and player selection is paper, sum a point to player.
         else if (playerSelection === "paper" && computerSelection === "rock")
         {
           playerPoints++;
+          return "You win, paper beats rock."
         }// 2.1.6 If CPU selection is rock and player selection is scissors, sum a point to CPU.
         else if (playerSelection === "scissors" && computerSelection === "rock")
         {
           computerPoints++;
+          return "Computer wins, rock beats scissors."
         }// 2.1.7 If CPU selection is paper and player selection is scissors, sum a point to player.
         else if (playerSelection === "scissors" && computerSelection === "paper")
         {
           playerPoints++;
+          return "You win, scissors beats paper."
         }
         round++;
       }
