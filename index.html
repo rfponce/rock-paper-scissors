@@ -1,8 +1,5 @@
 <html>
   <script>
-    let playerPoints = 0;
-    let computerPoints = 0;
-      
     function randomIntFromInterval(min, max)
     { // min and max included 
       return Math.floor(Math.random() * (max - min + 1) + min);
@@ -97,12 +94,58 @@
     //   console.log("Game Over");
     // }
 
-    // function game()
-    // {
-    //   let gameOver = false;
-    //   let round = 1;
+    function game()
+    {
+      let round = 1;
+      let playerPoints = 0;
+      let computerPoints = 0;
 
+      do
+      {
+        switch (playRound(playerSelection(), computerPlay()))
+        {
+          case "Both choose the same, it's a draw!":
+            round++;
+            break;
+          case "Computer wins, paper beats rock.":
+            computerPoints++;
+            round++;
+            break;
+          case "Computer wins, rock beats scissors.":
+            computerPoints++;
+            round++;
+            break;
+          case "Computer wins, scissors beats paper.":
+            computerPoints++;
+            round++;
+            break;
+          case "You win, paper beats rock.":
+            playerPoints++;
+            round++;
+            break;
+          case "You win, rock beats scissors.":
+            playerPoints++;
+            round++;
+            break;
+          case "You win, scissors beats paper.":
+            playerPoints++;
+            round++;
+            break;
+          default:
+            round = 5;
+            return "Juego cancelado"
+        }
+      }
+      while (round <= 5);
 
-    // }
+      if (playerPoints > computerPoints)
+      {
+        return "The player is the winner with " + playerPoints + " vs " + computerPoints + " of the computer";
+      }
+      else
+      {
+        return "The computer is the winner with " + computerPoints + " vs " + playerPoints + " of the player";
+      }
+    }
   </script>
 </html>
