@@ -100,7 +100,9 @@
 
       do
       {
-        switch (playRound(playerSelection(), computerPlay()))
+        let match = playRound(playerSelection(), computerPlay());
+        
+        switch (match)
         {
           case "Both choose the same, it's a draw!":
             round++;
@@ -133,6 +135,7 @@
             round = 5;
             return "Juego cancelado"
         }
+        console.log(match);
       }
       while (round <= 5);
 
