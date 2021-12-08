@@ -82,17 +82,15 @@
       {
         return "You win, scissors beats paper."
       }
-      else
+      else if (playerSelection === computerSelection)
       {
         return "Both choose the same, it's a draw!"
       }
+      else
+      {
+        return "Cancel"
+      }
     }
-      
-    // if (round == 5)
-    // {
-    //   gameOver = true;
-    //   console.log("Game Over");
-    // }
 
     function game()
     {
