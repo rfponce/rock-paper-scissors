@@ -184,3 +184,5 @@ function printValues() {
     }
   }
 }
+
+document.addEventListener('DOMContentLoaded', game);
