@@ -128,52 +128,54 @@ function game() {
   }
 }
 
-function printPoints() {
+function printValues() {
   return {
-    setPlayerPoints: function (points) {
-      const playerPoints = document.getElementById('player-points');
-      
-      playerPoints.innerText = points;
+    printPoints: function () {
+      return {
+        setPlayerPoints: function (points) {
+          const playerPoints = document.getElementById('player-points');
+          
+          playerPoints.innerText = points;
+        },
+        setComputerPoints: function (points) {
+          const computerPoints = document.getElementById('computer-points');
+          
+          computerPoints.innerText = points;
+        }
+      }
     },
-    setComputerPoints: function (points) {
-      const computerPoints = document.getElementById('computer-points');
-      
-      computerPoints.innerText = points;
-    }
-  }
-}
-
-function printRound() {
-  return {
-    setRound: function (round) {
-      const roundNumber = document.getElementById('current-round');
-
-      roundNumber.innerText = round;
+    printRound: function () {
+      return {
+        setRound: function (round) {
+          const roundNumber = document.getElementById('current-round');
+    
+          roundNumber.innerText = round;
+        },
+        resetRound: function () {
+          const roundNumber = document.getElementById('current-round');
+    
+          roundNumber.innerText = 0;
+        }
+      }
     },
-    resetRound: function () {
-      const roundNumber = document.getElementById('current-round');
-
-      roundNumber.innerText = 0;
-    }
-  }
-}
-
-function printSelection() {
-  return {
-    resetSelections: function () {
-      const selectionsValues = document.querySelectorAll('#selection>span');
-
-      selectionsValues.forEach((selection) => {selection.innerText = 'none'});
-    },
-    printPlayerSelection: function (selection) {
-      const playerSelectionValue = document.getElementById('player-selection');
-
-      playerSelectionValue.innerText = selection;
-    },
-    printComputerSelection: function (selection) {
-      const computerSelectionValue = document.getElementById('computer-selection');
-
-      computerSelectionValue.innerText = selection;
+    printSelection: function () {
+      return {
+        resetSelections: function () {
+          const selectionsValues = document.querySelectorAll('#selection>span');
+    
+          selectionsValues.forEach((selection) => {selection.innerText = 'none'});
+        },
+        printPlayerSelection: function (selection) {
+          const playerSelectionValue = document.getElementById('player-selection');
+    
+          playerSelectionValue.innerText = selection;
+        },
+        printComputerSelection: function (selection) {
+          const computerSelectionValue = document.getElementById('computer-selection');
+    
+          computerSelectionValue.innerText = selection;
+        }
+      }
     }
   }
 }
