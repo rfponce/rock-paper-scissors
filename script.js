@@ -16,18 +16,26 @@ function game() {
     // 1.0 Declare variable randomNumber.
     // 1.1 Generate a random number between 1 and 3 and save it in the variable.
     let randomNumber = randomIntFromInterval(1, 3);
+    let selection = null;
   
     // 1.2 If the generated number is 1 return rock, 2 for paper, and 3 for scissors.
     switch (randomNumber) {
       case 1:
-        return "rock";
+        selection = "rock";
+        valuesPrinter.printSelection().printComputerSelection("Rock");
+        break;
   
       case 2:
-        return "paper";
+        selection = "paper";
+        valuesPrinter.printSelection().printComputerSelection("Paper");
+        break;
   
       case 3:
-        return "scissors";
+        selection = "scissors";
+        valuesPrinter.printSelection().printComputerSelection("Scissors");
+        break;
     }
+    lastComputerSelection = selection;
   }
   
   function playerSelection(event) {
