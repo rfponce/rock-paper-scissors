@@ -20,19 +20,23 @@ function computerPlay() {
   }
 }
 
-function playerSelection() {
+function playerSelection(event) {
   let selection = null;
+  const valuesPrinter = printValues();
+  let buttonId = event.target.id;
 
-  selection = prompt("Write 1 for rock, 2 for paper or 3 for scissors:");
-  switch (selection) {
-    case "1":
+  switch (buttonId) {
+    case "rock-button":
       selection = "rock";
+      valuesPrinter.printSelection().printPlayerSelection("Rock");
       break;
-    case "2":
+    case "paper-button":
       selection = "paper";
+      valuesPrinter.printSelection().printPlayerSelection("Paper");
       break;
-    case "3":
+    case "scissors-button":
       selection = "scissors";
+      valuesPrinter.printSelection().printPlayerSelection("Scissors");
       break;
     default:
       alert("Invalid option. Canceling...");
@@ -77,45 +81,46 @@ function game() {
   let round = 1;
   let playerPoints = 0;
   let computerPoints = 0;
+  let lastPlayerSelection = null;
+  let lastComputerSelection = null;
+  const playerButtons = document.querySelectorAll('button');
+  const match = null;
+  //match = playRound(playerSelection(), computerPlay());
 
-  do {
-    let match = playRound(playerSelection(), computerPlay());
+  playerButtons.forEach((button) => {button.addEventListener('click', playerSelection)})
 
-    switch (match) {
-      case "Both choose the same, it's a draw!":
-        round++;
-        break;
-      case "Computer wins, paper beats rock.":
-        computerPoints++;
-        round++;
-        break;
-      case "Computer wins, rock beats scissors.":
-        computerPoints++;
-        round++;
-        break;
-      case "Computer wins, scissors beats paper.":
-        computerPoints++;
-        round++;
-        break;
-      case "You win, paper beats rock.":
-        playerPoints++;
-        round++;
-        break;
-      case "You win, rock beats scissors.":
-        playerPoints++;
-        round++;
-        break;
-      case "You win, scissors beats paper.":
-        playerPoints++;
-        round++;
-        break;
-      default:
-        round = 5;
-        return "Juego cancelado"
-    }
-    console.log(match);
+  switch (match) {
+    case "Both choose the same, it's a draw!":
+      round++;
+      break;
+    case "Computer wins, paper beats rock.":
+      computerPoints++;
+      round++;
+      break;
+    case "Computer wins, rock beats scissors.":
+      computerPoints++;
+      round++;
+      break;
+    case "Computer wins, scissors beats paper.":
+      computerPoints++;
+      round++;
+      break;
+    case "You win, paper beats rock.":
+      playerPoints++;
+      round++;
+      break;
+    case "You win, rock beats scissors.":
+      playerPoints++;
+      round++;
+      break;
+    case "You win, scissors beats paper.":
+      playerPoints++;
+      round++;
+      break;
+    default:
+      round = 5;
+      return "Juego cancelado"
   }
-  while (round <= 5);
 
   if (playerPoints > computerPoints) {
     return "The player's points was " + playerPoints + " and the computer's points was " + computerPoints + ". The player is the winner";
