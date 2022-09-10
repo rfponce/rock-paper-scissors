@@ -82,4 +82,5 @@ button {
 #results-text {
   display: flex;
   justify-content: space-around;
+  font-size: xx-large;
 }
