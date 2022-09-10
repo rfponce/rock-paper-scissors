@@ -52,7 +52,7 @@ function game() {
         alert("Invalid option. Canceling...");
         selection = "cancel";
     }
-    return selection;
+    lastPlayerSelection = selection;
   }
   
   // 2.0 Choose a winner.
