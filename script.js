@@ -157,3 +157,23 @@ function printRound() {
     }
   }
 }
+
+function printSelection() {
+  return {
+    resetSelections: function () {
+      const selectionsValues = document.querySelectorAll('#selection>span');
+
+      selectionsValues.forEach((selection) => {selection.innerText = 'none'});
+    },
+    printPlayerSelection: function (selection) {
+      const playerSelectionValue = document.getElementById('player-selection');
+
+      playerSelectionValue.innerText = selection;
+    },
+    printComputerSelection: function (selection) {
+      const computerSelectionValue = document.getElementById('computer-selection');
+
+      computerSelectionValue.innerText = selection;
+    }
+  }
+}
