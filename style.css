@@ -41,7 +41,7 @@ span#scissors {
 
 p,
 #selection,
-#results-text {
+#score-information {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -70,17 +70,17 @@ button {
 }
 
 .gamer-panel,
-#results-screen
+#score-screen
  {
   border: 2px dotted black;
   padding: 0.5em;
 }
 
-#results-screen {
+#score-screen {
   width: 100%;
 }
 
-#results-text {
+#score-information {
   display: flex;
   justify-content: space-around;
   font-size: xx-large;
