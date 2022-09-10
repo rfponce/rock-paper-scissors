@@ -127,3 +127,18 @@ function game() {
     return "The player's points was " + playerPoints + " and the computer's points was " + computerPoints + ". It's a draw!";
   }
 }
+
+function printPoints() {
+  return {
+    setPlayerPoints: function (points) {
+      const playerPoints = document.getElementById('player-points');
+      
+      playerPoints.innerText = points;
+    },
+    setComputerPoints: function (points) {
+      const computerPoints = document.getElementById('computer-points');
+      
+      computerPoints.innerText = points;
+    }
+  }
+}
