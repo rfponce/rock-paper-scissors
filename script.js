@@ -142,3 +142,18 @@ function printPoints() {
     }
   }
 }
+
+function printRound() {
+  return {
+    setRound: function (round) {
+      const roundNumber = document.getElementById('current-round');
+
+      roundNumber.innerText = round;
+    },
+    resetRound: function () {
+      const roundNumber = document.getElementById('current-round');
+
+      roundNumber.innerText = 0;
+    }
+  }
+}
