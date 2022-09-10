@@ -78,3 +78,8 @@ button {
 #results-screen {
   width: 100%;
 }
+
+#results-text {
+  display: flex;
+  justify-content: space-around;
+}
