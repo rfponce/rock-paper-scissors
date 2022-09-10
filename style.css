@@ -53,6 +53,8 @@ p,
 }
 
 .avatar-info {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 0.5em;
 }
 
