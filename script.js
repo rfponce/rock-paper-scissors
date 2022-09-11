@@ -5,7 +5,7 @@ function game() {
   let lastComputerSelection = null;
   const playerButtons = document.querySelectorAll('button');
   
-  playerButtons.forEach((button) => {button.addEventListener('click', checkScore)});
+  playerButtons.forEach((button) => {button.addEventListener('click', playRound)});
 
   function randomIntFromInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -105,6 +105,7 @@ function game() {
     else {
       printValues().printResult().setText("ERROR");
     }
+    checkScore();
   }
 
   function printValues() {
@@ -183,9 +184,6 @@ function game() {
     else if (computerPoints === 5) {
       alert("The computer is the winner of the game");
       reset();
-    }
-    else {
-      playRound(event);
     }
   }
 
