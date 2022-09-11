@@ -67,6 +67,8 @@ p,
 button {
   background-color: black;
   color: #edc41f;
+  width: 6em;
+  height: 3em;
 }
 
 .gamer-panel,
