@@ -40,21 +40,20 @@ function game() {
   
   function playerSelection(event) {
     let selection = null;
-    const valuesPrinter = printValues();
     let buttonId = event.target.id;
   
     switch (buttonId) {
       case "rock-button":
         selection = "rock";
-        valuesPrinter.printSelection().printPlayerSelection("Rock");
+        printValues().printSelection().printPlayerSelection("Rock");
         break;
       case "paper-button":
         selection = "paper";
-        valuesPrinter.printSelection().printPlayerSelection("Paper");
+        printValues().printSelection().printPlayerSelection("Paper");
         break;
       case "scissors-button":
         selection = "scissors";
-        valuesPrinter.printSelection().printPlayerSelection("Scissors");
+        printValues().printSelection().printPlayerSelection("Scissors");
         break;
       default:
         alert("Invalid option. Canceling...");
