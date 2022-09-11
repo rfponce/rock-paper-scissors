@@ -160,3 +160,14 @@ button {
     flex: 1;
   }
 }
+
+@media (min-width: 1400px) {
+  body {
+    background-color: #1888bb;
+  }
+  
+  #wrapper {
+    width: 90vw;
+    margin: auto;
+  }
+}
