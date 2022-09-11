@@ -158,15 +158,15 @@ function game() {
           setText: function () {
             return {
               winText: function (text) {
-                resultText.style = 'color: green; background-color: rgba(0, 0, 0, 0.5)';
+                resultText.style = 'color: green;';
                 resultText.innerText = text;
               },
               looseText: function (text) {
-                resultText.style = 'color: red; background-color: rgba(0, 0, 0, 0.5)';
+                resultText.style = 'color: red;';
                 resultText.innerText = text;
               },
               drawText: function (text) {
-                resultText.style = 'color: white; background-color: rgba(0, 0, 0, 0.5)';
+                resultText.style = 'color: white;';
                 resultText.innerText = text;
               }
             }

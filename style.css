@@ -85,3 +85,7 @@ button {
   justify-content: space-around;
   font-size: xx-large;
 }
+
+#result-information {
+  background-color: rgba(0, 0, 0, 0.5);
+}
