@@ -105,3 +105,47 @@ button {
 #result-information {
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+@media (min-width: 768px) {
+  h1 {
+    line-height: 7rem;
+  }
+  
+  span#rock {
+    font-size: 15rem;
+  }
+  
+  span#paper {
+    font-size: 13rem;
+  }
+  
+  span#scissors {
+    font-size: 9rem;
+  }
+
+  p {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 5rem;
+  }
+
+  h4,
+  #selection {
+    font-size: 3rem;
+  }
+
+  .choices {
+    gap: 1rem;
+  }
+  
+  button {
+    font-size: 3rem;
+    flex: 1;
+  }
+
+  #score-information {
+    font-size: 4rem;
+  }
+}
