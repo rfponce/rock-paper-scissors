@@ -72,28 +72,28 @@ function game() {
     // 2.1.1 If player selection is equal to CPU selection, do not sum points.
     // 2.1.2 If player selection is rock and CPU selection is paper sum a point to CPU.
     if (lastPlayerSelection === "rock" && lastComputerSelection === "paper") {
-      console.log("Computer wins, paper beats rock.");
+      printValues().printResult().setText("Computer wins, paper beats rock.");
     }// 2.1.3 If player selection is rock and CPU selection is scissors, sum a point to player.
     else if (lastPlayerSelection === "rock" && lastComputerSelection === "scissors") {
-      console.log("You win, rock beats scissors.");
+      printValues().printResult().setText("You win, rock beats scissors.");
     }// 2.1.4 If player selection is paper and CPU selection is scissors, sum a point to CPU.
     else if (lastPlayerSelection === "paper" && lastComputerSelection === "scissors") {
-      console.log("Computer wins, scissors beats paper.");
+      printValues().printResult().setText("Computer wins, scissors beats paper.");
     }// 2.1.5 If CPU selection is rock and player selection is paper, sum a point to player.
     else if (lastPlayerSelection === "paper" && lastComputerSelection === "rock") {
-      console.log("You win, paper beats rock.");
+      printValues().printResult().setText("You win, paper beats rock.");
     }// 2.1.6 If CPU selection is rock and player selection is scissors, sum a point to CPU.
     else if (lastPlayerSelection === "scissors" && lastComputerSelection === "rock") {
-      console.log("Computer wins, rock beats scissors.");
+      printValues().printResult().setText("Computer wins, rock beats scissors.");
     }// 2.1.7 If CPU selection is paper and player selection is scissors, sum a point to player.
     else if (lastPlayerSelection === "scissors" && lastComputerSelection === "paper") {
-      console.log("You win, scissors beats paper.");
+      printValues().printResult().setText("You win, scissors beats paper.");
     }
     else if (lastPlayerSelection === lastComputerSelection) {
-      console.log("Both choose the same, it's a draw!");
+      printValues().printResult().setText("Both choose the same, it's a draw!");
     }
     else {
-      console.log("Cancel");
+      printValues().printResult().setText("ERROR");
     }
   }
 
