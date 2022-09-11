@@ -145,6 +145,18 @@ function game() {
             computerSelectionValue.innerText = selection;
           }
         }
+      },
+      printResult: function () {
+        const resultText = document.getElementById('result-text');
+
+        return {
+          resetText: function () {
+            resultText.innerText = "Round results will be displayed here";
+          },
+          setText: function (text) {
+            resultText.innerText = text;
+          }
+        }
       }
     }
   }
