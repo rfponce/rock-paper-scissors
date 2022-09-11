@@ -22,17 +22,17 @@ function game() {
     switch (randomNumber) {
       case 1:
         selection = "rock";
-        valuesPrinter.printSelection().printComputerSelection("Rock");
+        printValues().printSelection().printComputerSelection("Rock");
         break;
   
       case 2:
         selection = "paper";
-        valuesPrinter.printSelection().printComputerSelection("Paper");
+        printValues().printSelection().printComputerSelection("Paper");
         break;
   
       case 3:
         selection = "scissors";
-        valuesPrinter.printSelection().printComputerSelection("Scissors");
+        printValues().printSelection().printComputerSelection("Scissors");
         break;
     }
     lastComputerSelection = selection;
@@ -65,33 +65,35 @@ function game() {
   
   // 2.0 Choose a winner.
   // 2.1 Take player and CPU selections.
-  function playRound(playerSelection, computerSelection) {
+  function playRound(event) {
+    playerSelection(event);
+    computerPlay();
     // 2.1 Compare selections to choose a winner.
     // 2.1.1 If player selection is equal to CPU selection, do not sum points.
     // 2.1.2 If player selection is rock and CPU selection is paper sum a point to CPU.
-    if (playerSelection === "rock" && computerSelection === "paper") {
-      return "Computer wins, paper beats rock."
+    if (lastPlayerSelection === "rock" && lastComputerSelection === "paper") {
+      console.log("Computer wins, paper beats rock.");
     }// 2.1.3 If player selection is rock and CPU selection is scissors, sum a point to player.
-    else if (playerSelection === "rock" && computerSelection === "scissors") {
-      return "You win, rock beats scissors."
+    else if (lastPlayerSelection === "rock" && lastComputerSelection === "scissors") {
+      console.log("You win, rock beats scissors.");
     }// 2.1.4 If player selection is paper and CPU selection is scissors, sum a point to CPU.
-    else if (playerSelection === "paper" && computerSelection === "scissors") {
-      return "Computer wins, scissors beats paper."
+    else if (lastPlayerSelection === "paper" && lastComputerSelection === "scissors") {
+      console.log("Computer wins, scissors beats paper.");
     }// 2.1.5 If CPU selection is rock and player selection is paper, sum a point to player.
-    else if (playerSelection === "paper" && computerSelection === "rock") {
-      return "You win, paper beats rock."
+    else if (lastPlayerSelection === "paper" && lastComputerSelection === "rock") {
+      console.log("You win, paper beats rock.");
     }// 2.1.6 If CPU selection is rock and player selection is scissors, sum a point to CPU.
-    else if (playerSelection === "scissors" && computerSelection === "rock") {
-      return "Computer wins, rock beats scissors."
+    else if (lastPlayerSelection === "scissors" && lastComputerSelection === "rock") {
+      console.log("Computer wins, rock beats scissors.");
     }// 2.1.7 If CPU selection is paper and player selection is scissors, sum a point to player.
-    else if (playerSelection === "scissors" && computerSelection === "paper") {
-      return "You win, scissors beats paper."
+    else if (lastPlayerSelection === "scissors" && lastComputerSelection === "paper") {
+      console.log("You win, scissors beats paper.");
     }
-    else if (playerSelection === computerSelection) {
-      return "Both choose the same, it's a draw!"
+    else if (lastPlayerSelection === lastComputerSelection) {
+      console.log("Both choose the same, it's a draw!");
     }
     else {
-      return "Cancel"
+      console.log("Cancel");
     }
   }
 
