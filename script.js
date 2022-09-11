@@ -1,5 +1,4 @@
 function game() {
-  let round = 1;
   let playerPoints = 0;
   let computerPoints = 0;
   let lastPlayerSelection = null;
@@ -7,6 +6,7 @@ function game() {
   const playerButtons = document.querySelectorAll('button');
   const match = null;
   //match = playRound(playerSelection(), computerPlay());
+  playerButtons.forEach((button) => {button.addEventListener('click', playRound)})
 
   function randomIntFromInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -106,7 +106,6 @@ function game() {
     else {
       printValues().printResult().setText("ERROR");
     }
-    round++;
   }
 
   function printValues() {
@@ -122,20 +121,6 @@ function game() {
             const computerPoints = document.getElementById('computer-points');
             
             computerPoints.innerText = points;
-          }
-        }
-      },
-      printRound: function () {
-        return {
-          setRound: function (round) {
-            const roundNumber = document.getElementById('current-round');
-      
-            roundNumber.innerText = round;
-          },
-          resetRound: function () {
-            const roundNumber = document.getElementById('current-round');
-      
-            roundNumber.innerText = 0;
           }
         }
       },
@@ -186,40 +171,7 @@ function game() {
     }
   }
 
-  playerButtons.forEach((button) => {button.addEventListener('click', playRound)})
-
-  switch (match) {
-    case "Both choose the same, it's a draw!":
-      round++;
-      break;
-    case "Computer wins, paper beats rock.":
-      computerPoints++;
-      round++;
-      break;
-    case "Computer wins, rock beats scissors.":
-      computerPoints++;
-      round++;
-      break;
-    case "Computer wins, scissors beats paper.":
-      computerPoints++;
-      round++;
-      break;
-    case "You win, paper beats rock.":
-      playerPoints++;
-      round++;
-      break;
-    case "You win, rock beats scissors.":
-      playerPoints++;
-      round++;
-      break;
-    case "You win, scissors beats paper.":
-      playerPoints++;
-      round++;
-      break;
-    default:
-      round = 5;
-      return "Juego cancelado"
-  }
+  
 
   if (playerPoints > computerPoints) {
     return "The player's points was " + playerPoints + " and the computer's points was " + computerPoints + ". The player is the winner";
