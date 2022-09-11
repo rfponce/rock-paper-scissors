@@ -111,6 +111,11 @@ function game() {
     return {
       printPoints: function () {
         return {
+          resetPoints: function () {
+            const pointScreens = document.querySelectorAll('#score-information>span');
+            
+            pointScreens.forEach((selection) => {selection.innerText = '0'});
+          },
           setPlayerPoints: function (points) {
             const playerPoints = document.getElementById('player-points');
             
@@ -172,16 +177,27 @@ function game() {
 
   function checkScore(event) {
     if (playerPoints === 5) {
-      printValues().printResult().setText("Congratulations, you are the winner of the game!");
+      alert("Congratulations, you are the winner of the game!");
       reset();
     }
     else if (computerPoints === 5) {
-      printValues().printResult().setText("The computer is the winner of the game");
+      alert("The computer is the winner of the game");
       reset();
     }
     else {
       playRound(event);
     }
+  }
+
+  function reset() {
+    playerPoints = 0;
+    computerPoints = 0;
+    lastPlayerSelection = null;
+    lastComputerSelection = null;
+
+    printValues().printSelection().resetSelections();
+    printValues().printPoints().resetPoints();
+    printValues().printResult().resetText();
   }
 
 }
