@@ -72,26 +72,32 @@ function game() {
     // 2.1.2 If player selection is rock and CPU selection is paper sum a point to CPU.
     if (lastPlayerSelection === "rock" && lastComputerSelection === "paper") {
       computerPoints++;
+      printValues().printPoints().setComputerPoints(computerPoints);
       printValues().printResult().setText().looseText("Computer wins, paper beats rock.");
     }// 2.1.3 If player selection is rock and CPU selection is scissors, sum a point to player.
     else if (lastPlayerSelection === "rock" && lastComputerSelection === "scissors") {
       playerPoints++;
+      printValues().printPoints().setPlayerPoints(playerPoints);
       printValues().printResult().setText().winText("You win, rock beats scissors.");
     }// 2.1.4 If player selection is paper and CPU selection is scissors, sum a point to CPU.
     else if (lastPlayerSelection === "paper" && lastComputerSelection === "scissors") {
       computerPoints++;
+      printValues().printPoints().setComputerPoints(computerPoints);
       printValues().printResult().setText().looseText("Computer wins, scissors beats paper.");
     }// 2.1.5 If CPU selection is rock and player selection is paper, sum a point to player.
     else if (lastPlayerSelection === "paper" && lastComputerSelection === "rock") {
       playerPoints++;
+      printValues().printPoints().setPlayerPoints(playerPoints);
       printValues().printResult().setText().winText("You win, paper beats rock.");
     }// 2.1.6 If CPU selection is rock and player selection is scissors, sum a point to CPU.
     else if (lastPlayerSelection === "scissors" && lastComputerSelection === "rock") {
       computerPoints++;
+      printValues().printPoints().setComputerPoints(computerPoints);
       printValues().printResult().setText().looseText("Computer wins, rock beats scissors.");
     }// 2.1.7 If CPU selection is paper and player selection is scissors, sum a point to player.
     else if (lastPlayerSelection === "scissors" && lastComputerSelection === "paper") {
       playerPoints++;
+      printValues().printPoints().setPlayerPoints(playerPoints);
       printValues().printResult().setText().winText("You win, scissors beats paper.");
     }
     else if (lastPlayerSelection === lastComputerSelection) {
