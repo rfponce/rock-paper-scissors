@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 #wrapper {
   display: flex;
   flex-direction: column;
@@ -22,41 +26,50 @@ h1, h2, h3, h4 {
 
 h1 {
   text-transform: uppercase;
-  font-size: 3em;
-  line-height: 40px;
-  margin-bottom: 1em;
+  font-size: 3rem;
+  line-height: 5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2.1rem;
+}
+
+h4 {
+  font-size: 2rem;
 }
 
 span#rock {
-  font-size: 1.2em;
+  font-size: 8rem;
 }
 
 span#paper {
-  font-size: 1em;
+  font-size: 7rem;
 }
 
 span#scissors {
-  font-size: 0.65em;
+  font-size: 4rem;
 }
 
 p,
 #selection,
 #score-information {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2rem;
 }
 
 #gamers-panels {
   display: flex;
   flex-direction: column;
-  padding: 1em;
-  gap: 0.5em;
+  padding: 1rem;
+  gap: 0.5rem;
   width: 100%;
 }
 
 .avatar-info {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5rem;
 }
 
 .choices {
@@ -67,15 +80,16 @@ p,
 button {
   background-color: black;
   color: #edc41f;
-  width: 6em;
-  height: 3em;
+  width: 8rem;
+  padding: 0.4rem;
+  font-size: 1.6rem;
 }
 
 .gamer-panel,
 #score-screen
  {
   border: 2px dotted black;
-  padding: 0.5em;
+  padding: 0.5rem;
 }
 
 #score-screen {
