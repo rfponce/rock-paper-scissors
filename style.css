@@ -149,3 +149,14 @@ button {
     font-size: 4rem;
   }
 }
+
+@media (min-width: 1200px) {
+  #gamers-panels {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .gamer-panel {
+    flex: 1;
+  }
+}
