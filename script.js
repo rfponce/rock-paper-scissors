@@ -106,6 +106,7 @@ function game() {
     else {
       printValues().printResult().setText("ERROR");
     }
+    round++;
   }
 
   function printValues() {
