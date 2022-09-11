@@ -147,7 +147,7 @@ function game() {
     }
   }
 
-  playerButtons.forEach((button) => {button.addEventListener('click', playerSelection)})
+  playerButtons.forEach((button) => {button.addEventListener('click', playRound)})
 
   switch (match) {
     case "Both choose the same, it's a draw!":
