@@ -4,9 +4,8 @@ function game() {
   let lastPlayerSelection = null;
   let lastComputerSelection = null;
   const playerButtons = document.querySelectorAll('button');
-  const match = null;
-  //match = playRound(playerSelection(), computerPlay());
-  playerButtons.forEach((button) => {button.addEventListener('click', playRound)})
+  
+  playerButtons.forEach((button) => {button.addEventListener('click', checkScore)});
 
   function randomIntFromInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -171,17 +170,20 @@ function game() {
     }
   }
 
-  
+  function checkScore(event) {
+    if (playerPoints === 5) {
+      printValues().printResult().setText("Congratulations, you are the winner of the game!");
+      reset();
+    }
+    else if (computerPoints === 5) {
+      printValues().printResult().setText("The computer is the winner of the game");
+      reset();
+    }
+    else {
+      playRound(event);
+    }
+  }
 
-  if (playerPoints > computerPoints) {
-    return "The player's points was " + playerPoints + " and the computer's points was " + computerPoints + ". The player is the winner";
-  }
-  else if (playerPoints < computerPoints) {
-    return "The player's points was " + playerPoints + " and the computer's points was " + computerPoints + ". The computer is the winner";
-  }
-  else {
-    return "The player's points was " + playerPoints + " and the computer's points was " + computerPoints + ". It's a draw!";
-  }
 }
 
 document.addEventListener('DOMContentLoaded', game);
