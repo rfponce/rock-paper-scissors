@@ -112,7 +112,7 @@ function game() {
       printPoints: function () {
         return {
           resetPoints: function () {
-            const pointScreens = document.querySelectorAll('#score-information>span');
+            const pointScreens = document.querySelectorAll('#score-information>div>span');
             
             pointScreens.forEach((selection) => {selection.innerText = '0'});
           },
